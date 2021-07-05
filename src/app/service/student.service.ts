@@ -14,7 +14,7 @@ export class StudentService {
   }
 
   public getStudent():any{
-      return this.http.get('https://localhost:80/Demo/1')
+      return this.http.get('https://localhost:82/Demo/1')
         .toPromise().then(this.extractData).catch(this.handleError);
   }
 
