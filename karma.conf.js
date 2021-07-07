@@ -10,8 +10,14 @@ module.exports = function (config) {
       require('karma-chrome-launcher'),
       require('karma-jasmine-html-reporter'),
       require('karma-coverage'),
-      require('@angular-devkit/build-angular/plugins/karma')
+      require('@angular-devkit/build-angular/plugins/karma'),
+	  require('karma-junit-reporter')
     ],
+	junitReporter: {
+      outputDir: 'artifacts/tests',
+      outputFile: 'junit-test-results.xml',
+      useBrowserName: false,
+    },
     client: {
       jasmine: {
         // you can add configuration options for Jasmine here
@@ -32,13 +38,17 @@ module.exports = function (config) {
         { type: 'text-summary' }
       ]
     },
-    reporters: ['progress', 'kjhtml'],
+    reporters: ['progress', 'kjhtml','junit'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
     browsers: ['Chrome'],
     singleRun: false,
-    restartOnFileChange: true
+    restartOnFileChange: true,
+	captureTimeout: 210000,
+	browserDisconnectTolerance: 3, 
+	browserDisconnectTimeout : 210000,
+	browserNoActivityTimeout : 210000
   });
 };
