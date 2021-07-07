@@ -14,8 +14,8 @@ module.exports = function (config) {
 	  require('karma-junit-reporter')
     ],
 	junitReporter: {
-      outputDir: 'dist/tests',
-      outputFile: 'junit-test-results.xml',
+      outputDir: 'target/surefire-reports/TESTS-TestSuite.xml',
+      outputFile: 'TESTS-TestSuite.xml',
       useBrowserName: false,
     },
     client: {
