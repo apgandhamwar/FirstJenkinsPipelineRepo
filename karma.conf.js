@@ -14,7 +14,7 @@ module.exports = function (config) {
 	  require('karma-junit-reporter')
     ],
 	junitReporter: {
-      outputDir: 'artifacts/tests',
+      outputDir: 'dist/tests',
       outputFile: 'junit-test-results.xml',
       useBrowserName: false,
     },
@@ -42,11 +42,11 @@ module.exports = function (config) {
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
-    autoWatch: true,
+    autoWatch: false,
     browsers: ['Chrome'],
-    singleRun: false,
+    singleRun: true,
     restartOnFileChange: true,
-	captureTimeout: 210000,
+    captureTimeout: 210000,
 	browserDisconnectTolerance: 3, 
 	browserDisconnectTimeout : 210000,
 	browserNoActivityTimeout : 210000
