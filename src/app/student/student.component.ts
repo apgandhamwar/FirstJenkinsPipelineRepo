@@ -20,6 +20,7 @@ export class StudentComponent implements OnInit {
   getStudent():void{
     //this.studentService.getStudent().subscribe(student => this.studentInfo = student);
 
+    // Testing version
     this.studentService.getStudent()
       .then((result:any) => {
         this.RollNo = JSON.parse(JSON.stringify(result['rollNo']));
